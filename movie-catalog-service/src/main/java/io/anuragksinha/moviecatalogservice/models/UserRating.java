@@ -1,4 +1,4 @@
-package io.anuragksinha.ratingsdataservice.models;
+package io.anuragksinha.moviecatalogservice.models;
 
 import java.util.List;
 
