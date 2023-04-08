@@ -30,3 +30,11 @@
 ## Is the load balancing good?
 * The loadbalancing which is done here is a **client side load balancing** which is not good as the Client get the list of Service Instances from Service Discovery and then on client side the decision is done to which service it wants to interact to. Which is incorrect as all the clients can hit the same instance at a time and overload the same service instance. As Server should have the full control because server will only know the current load on each of its instances. And accordingly route the request to appropiate service instance. 
 <img width="862" alt="Screenshot 2023-04-08 at 12 43 51 PM" src="https://user-images.githubusercontent.com/26598629/230708670-bc5e55f5-ee7e-4719-a3da-558cfc1cb952.png">
+
+## How Fault tolerance works?
+ * Heart Beat on regular interval
+    * After registering the service with Service Discovery, the Service Discovery send heart beat to each the registered services. And checks if they are alive or not. 
+ * If the service discovery is down
+    * In this case the Eureka Client calls the service discovery and lets say it did not get any response then it uses its local cache to get the service url. 
+     <img width="840" alt="Screenshot 2023-04-08 at 12 53 50 PM" src="https://user-images.githubusercontent.com/26598629/230709092-bf0222c8-9bb4-48f5-bba6-4eb1ec90ba11.png">
+
