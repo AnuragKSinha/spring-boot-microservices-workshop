@@ -26,3 +26,6 @@
 * Using @LoadBalanced
   > It does the service discovery in a load balanced way
 * When you use @LoadBalanced you are telling RestTemplate/WebClient dont go to the service directly whatever URL is given to you is not actual URL,the URL which is given is basically a hint about what service you need to discover.
+
+## Is the load balancing good?
+* The loadbalancing which is done here is a **client side load balancing** which is not good as the Client get the list of Service Instances from Service Discovery and then on client side the decision is done to which service it wants to interact to. Which is incorrect as all the clients can hit the same instance at a time and overload the same service instance. As Server should have the full control because server will only know the current load on each of its instances. And accordingly route the request to appropiate service instance. 
