@@ -29,3 +29,4 @@
 
 ## Is the load balancing good?
 * The loadbalancing which is done here is a **client side load balancing** which is not good as the Client get the list of Service Instances from Service Discovery and then on client side the decision is done to which service it wants to interact to. Which is incorrect as all the clients can hit the same instance at a time and overload the same service instance. As Server should have the full control because server will only know the current load on each of its instances. And accordingly route the request to appropiate service instance. 
+<img width="862" alt="Screenshot 2023-04-08 at 12 43 51 PM" src="https://user-images.githubusercontent.com/26598629/230708670-bc5e55f5-ee7e-4719-a3da-558cfc1cb952.png">
