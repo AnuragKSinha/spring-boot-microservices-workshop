@@ -1,12 +1,10 @@
 package io.anuragksinha.moviecatalogservice.resources;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import io.anuragksinha.moviecatalogservice.models.CatalogItem;
 import io.anuragksinha.moviecatalogservice.models.Movie;
-import io.anuragksinha.moviecatalogservice.models.Rating;
 import io.anuragksinha.moviecatalogservice.models.UserRating;
 
 import org.springframework.beans.factory.annotation.Autowired;
