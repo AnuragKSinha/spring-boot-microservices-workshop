@@ -27,14 +27,14 @@ public class MovieCatalogResource {
 	public List<CatalogItem> getCatalog(@PathVariable("userId") String userId){
 		UserRating ratings= webClient.build()
 				.get()
-				.uri("http://localhost:8083/ratingsdata/users/"+ userId)
+				.uri("http://ratings-data-service/ratingsdata/users/"+ userId)
 				.retrieve()
 				.bodyToMono(UserRating.class)
 				.block();
 		return ratings.getRatings().stream().map(rating -> {
 			Movie movie = webClient.build()
 					.get()
-					.uri( "http://localhost:8082/movies/"+ rating.getMovieId())
+					.uri( "http://movie-info-service/movies/"+ rating.getMovieId())
 					.retrieve()
 					.bodyToMono(Movie.class)
 			/**

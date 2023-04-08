@@ -3,6 +3,9 @@ package io.anuragksinha.moviecatalogservice.models;
 import java.util.List;
 
 public class UserRating {
+	public UserRating() {
+	}
+
 	private List<Rating> ratings;
 
 	public List<Rating> getRatings() {
