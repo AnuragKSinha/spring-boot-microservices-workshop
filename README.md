@@ -21,3 +21,8 @@
   * Start up a Eureka Server
   * Have microservice register(publish) using Eureka client
   * Have microservice locate(consume) using Eureka client
+
+## How to call service without using actual URLs?
+* Using @LoadBalanced
+  > It does the service discovery in a load balanced way
+* When you use @LoadBalanced you are telling RestTemplate/WebClient dont go to the service directly whatever URL is given to you is not actual URL,the URL which is given is basically a hint about what service you need to discover.
