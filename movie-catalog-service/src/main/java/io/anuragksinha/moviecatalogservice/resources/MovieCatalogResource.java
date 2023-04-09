@@ -38,6 +38,10 @@ public class MovieCatalogResource {
 					.get()
 					.uri( "http://localhost:8082/movies/"+ rating.getMovieId())
 					.retrieve()
+				/**
+				* The movie class should have a default constructor if not then 
+				* Exception will be thrown
+				*/
 					.bodyToMono(Movie.class)
 			/**
 			 * mono --> is a reactive way of saying that
