@@ -46,7 +46,7 @@ public class MovieCatalogResource {
 			 * blocking the execution till the
 			 * mono is fulfilled
 			 */
-			return new CatalogItem(movie.getName(),"Desc",rating.getRating());
+			return new CatalogItem(movie.getTitle(), movie.getOverview(), rating.getRating());
 		}).collect(Collectors.toList());
 	}
 }
