@@ -38,3 +38,13 @@
     * In this case the Eureka Client calls the service discovery and lets say it did not get any response then it uses its local cache to get the service url. 
      <img width="840" alt="Screenshot 2023-04-08 at 12 53 50 PM" src="https://user-images.githubusercontent.com/26598629/230709092-bf0222c8-9bb4-48f5-bba6-4eb1ec90ba11.png">
 
+
+## Architecture after adding external DB API?
+<img width="779" alt="Screenshot 2023-04-13 at 11 50 37 PM" src="https://user-images.githubusercontent.com/26598629/231850665-19cdd1cd-285a-4c9f-867a-11641bb21070.png">
+
+## How do we make the microservice resilient? 
+ * Issues with Microservices
+    * Scenario 1: When the service goes down
+          <img width="1035" alt="Screenshot 2023-04-14 at 12 01 50 AM" src="https://user-images.githubusercontent.com/26598629/231851603-94994733-0f0a-4d48-b693-6884aced0ae9.png">
+      * Solution: Run Multiple instances
+<img width="796" alt="Screenshot 2023-04-14 at 12 03 46 AM" src="https://user-images.githubusercontent.com/26598629/231851765-82cf8c4e-551d-465c-a879-f7ca5cd81683.png">
