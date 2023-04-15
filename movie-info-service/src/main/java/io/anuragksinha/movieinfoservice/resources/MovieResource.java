@@ -28,7 +28,7 @@ public class MovieResource {
 				.uri("https://api.themoviedb.org/3/movie/"+movieId+"?api_key="+apiKey)
 				.retrieve()
 				.bodyToMono(MovieSummary.class)
-				.timeout(Duration.ofSeconds(1)) // Added request level timeout
+				.timeout(Duration.ofSeconds(4)) // Added request level timeout
 				.block();
 		return new Movie(movieId,movieSummary.getOverview(),movieSummary.getTitle());
 	}
