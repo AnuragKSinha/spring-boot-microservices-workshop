@@ -53,5 +53,12 @@
       * When request comes in a thread is created and thread is taking time to process and even before the thread is done anyother request comes in and then another thread gets created.
       * If the request comes in in a faster rate than the threads in server fulfills the task and get removed.Now we have bunch of threads which are waiting soon what ends up happening is server resources get consumed. The maximum number of concurrent threads gets consumed which is configured.
       * __If you dont configure the thread count then server will crash as it will continue creating threads and server will run out of hardware resources__
+      * Now what happens as the request come in and threads are not being freed up, the thread consumes all the resources that are available server hit the max thread count and server cannot do anything else this is how things work within thread server.  
       <img width="923" alt="Screenshot 2023-04-14 at 12 17 06 AM" src="https://user-images.githubusercontent.com/26598629/232209459-ccd194ea-b688-4f7c-8712-2113c5a0e604.png">
+      
+      * With context of microservice 
+      > Service B is slow and Service A is fast: So all the request made from server to B will be stuck and all the request for A will be fast, And gradually as the Service B is slow so all the thread will be consumed by B and there will not be any thread left out to server A. And hence it will look like Service A is also slow. <img width="737" alt="Screenshot 2023-04-15 at 4 59 26 PM" src="https://user-images.githubusercontent.com/26598629/232213680-4db51fa4-ecab-4ae3-93ac-c7cd55f2f4d9.png">
+
+     * Solution: __Timeouts__ Removing threads which its taking too much time which will allow the other services to work. 
+
 
