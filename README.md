@@ -44,7 +44,14 @@
 
 ## How do we make the microservice resilient? 
  * Issues with Microservices
-    * Scenario 1: When the service goes down
-          <img width="1035" alt="Screenshot 2023-04-14 at 12 01 50 AM" src="https://user-images.githubusercontent.com/26598629/231851603-94994733-0f0a-4d48-b693-6884aced0ae9.png">
-      * Solution: Run Multiple instances
-<img width="796" alt="Screenshot 2023-04-14 at 12 03 46 AM" src="https://user-images.githubusercontent.com/26598629/231851765-82cf8c4e-551d-465c-a879-f7ca5cd81683.png">
+    * Scenario 1: When the service goes down <img width="1035" alt="Screenshot 2023-04-14 at 12 01 50 AM" src="https://user-images.githubusercontent.com/26598629/231851603-94994733-0f0a-4d48-b693-6884aced0ae9.png">
+          
+      * Solution: Run Multiple instances <img width="796" alt="Screenshot 2023-04-14 at 12 03 46 AM" src="https://user-images.githubusercontent.com/26598629/231851765-82cf8c4e-551d-465c-a879-f7ca5cd81683.png">
+
+    * Scenario 2: A microservice instance is slow <img width="1035" alt="Screenshot 2023-04-14 at 12 01 50 AM" src="https://user-images.githubusercontent.com/26598629/232208884-d03b2886-5e1c-45d6-b1fa-b07141532b03.png">
+      * Threads are the problem as it holds the threads till the request is fulfilled and hence server runs out of threads to cater the incoming request.
+      * When request comes in a thread is created and thread is taking time to process and even before the thread is done anyother request comes in and then another thread gets created.
+      * If the request comes in in a faster rate than the threads in server fulfills the task and get removed.Now we have bunch of threads which are waiting soon what ends up happening is server resources get consumed. The maximum number of concurrent threads gets consumed which is configured.
+      * __If you dont configure the thread count then server will crash as it will continue creating threads and server will run out of hardware resources__
+      <img width="923" alt="Screenshot 2023-04-14 at 12 17 06 AM" src="https://user-images.githubusercontent.com/26598629/232209459-ccd194ea-b688-4f7c-8712-2113c5a0e604.png">
+
