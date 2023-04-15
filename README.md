@@ -59,6 +59,12 @@
       * With context of microservice 
       > Service B is slow and Service A is fast: So all the request made from server to B will be stuck and all the request for A will be fast, And gradually as the Service B is slow so all the thread will be consumed by B and there will not be any thread left out to server A. And hence it will look like Service A is also slow. <img width="737" alt="Screenshot 2023-04-15 at 4 59 26 PM" src="https://user-images.githubusercontent.com/26598629/232213680-4db51fa4-ecab-4ae3-93ac-c7cd55f2f4d9.png">
 
-     * Solution: __Timeouts__ Removing threads which its taking too much time which will allow the other services to work. 
+     * Partial Solution: __Timeouts__ Removing threads which its taking too much time which will allow the other services to work. 
+     > it solves the problem as long as the frequency of the request that is coming in is lesser than the threads that are getting removed because of timeout. If timeout is set for 3 sec and incoming request is coming in with a frequency of 3 request/sec. Then even after timeout only 1 incoming request will be servered hence this will end up in same situation in which pileup will happen and there will not be enough server resources to cater the incoming requests. 
+     * Circuit Breaker Pattern
+        *  Detect somthing is wrong
+        *  Take temporary steps to avoid the situation getting worse. __Stop sending request to it as it will just comsume the threads__
+        *  Deactivates the "problem" component so that it doesn’t affect downstream components.
 
+## Circuit Breaker Pattern
 
