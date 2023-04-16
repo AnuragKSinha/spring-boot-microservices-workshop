@@ -67,4 +67,14 @@
         *  Deactivates the "problem" component so that it doesn’t affect downstream components.
 
 ## Circuit Breaker Pattern
+ * Circuit Breaker Parameters
+   * When does the circuit trip?
+     1. Last n requests to consider for the decision 
+     2. How many of those should fail?
+     3. Timeout duration after which the request will be considered as faliure 
+     
+   * When does the circuit up-trip?
+     1. How long to wait till the circuit breaker tries again?
+     
+<img width="896" alt="Screenshot 2023-04-15 at 6 52 12 PM" src="https://user-images.githubusercontent.com/26598629/232306007-a36fa165-b9a0-422e-8cb2-7cee3dbffe24.png">
 
