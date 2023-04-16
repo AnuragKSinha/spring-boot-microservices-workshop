@@ -65,6 +65,9 @@
         *  Detect somthing is wrong
         *  Take temporary steps to avoid the situation getting worse. __Stop sending request to it as it will just comsume the threads__
         *  Deactivates the "problem" component so that it doesn’t affect downstream components.
+<img width="872" alt="Screenshot 2023-04-16 at 5 03 04 PM" src="https://user-images.githubusercontent.com/26598629/232307305-1b9c8990-f2a2-4f3f-8203-7bd2cb812471.png">
+
+
 
 ## Circuit Breaker Pattern
  * Circuit Breaker Parameters
@@ -78,3 +81,16 @@
      
 <img width="896" alt="Screenshot 2023-04-15 at 6 52 12 PM" src="https://user-images.githubusercontent.com/26598629/232306007-a36fa165-b9a0-422e-8cb2-7cee3dbffe24.png">
 
+ * What happens to incoming requests when the circuit trips?
+
+  <img width="819" alt="Screenshot 2023-04-16 at 4 57 35 PM" src="https://user-images.githubusercontent.com/26598629/232306807-6b4102f3-e5bd-4c88-acfc-2c628c3f85cb.png">
+  
+  
+ > We need to have a fallback
+ > Option 1 is not recommended, Option 2 is a good choice and option 3 is best if possible 
+<img width="872" alt="Screenshot 2023-04-16 at 5 03 04 PM" src="https://user-images.githubusercontent.com/26598629/232307082-bdc7d0e5-43dc-489a-a6c3-a79ed087b19d.png">
+
+ * Why circuit breaker?
+    * Failing fast
+    * Fallback functionality 
+    * Automatic recovery
