@@ -78,6 +78,8 @@
      
    * When does the circuit up-trip?
      1. How long to wait till the circuit breaker tries again?
+
+__NOTE__: The circuit breaker parameters can derived with try and error
      
 <img width="896" alt="Screenshot 2023-04-15 at 6 52 12 PM" src="https://user-images.githubusercontent.com/26598629/232306007-a36fa165-b9a0-422e-8cb2-7cee3dbffe24.png">
 
@@ -94,3 +96,5 @@
     * Failing fast
     * Fallback functionality 
     * Automatic recovery
+
+<img width="787" alt="Screenshot 2023-04-16 at 5 19 46 PM" src="https://user-images.githubusercontent.com/26598629/232307934-9c8215f4-4a1e-4156-b29b-980ce2e36c57.png">
