@@ -98,3 +98,11 @@ __NOTE__: The circuit breaker parameters can derived with try and error
     * Automatic recovery
 
 <img width="787" alt="Screenshot 2023-04-16 at 5 19 46 PM" src="https://user-images.githubusercontent.com/26598629/232307934-9c8215f4-4a1e-4156-b29b-980ce2e36c57.png">
+
+  * Adding Hystrix to a SpringBoot microservice 
+  <img width="859" alt="Screenshot 2023-04-17 at 10 40 55 PM" src="https://user-images.githubusercontent.com/26598629/232567974-74fb7771-ac87-48e3-a693-49ad5e310828.png">
+ 
+  * How Hystrix works?
+    * Hystrix creates a Proxy classes over the class that is defined like a wrapper class which contains circuit breaker logic and when everything is good all the wrapper class is doing is just call the underlying method and return the response to the caller.And if anything goes wrong then call the fallback method configured.
+    <img width="599" alt="Screenshot 2023-04-17 at 11 15 01 PM" src="https://user-images.githubusercontent.com/26598629/232569047-9406e77b-cea5-4199-98f5-c99a0b2d2b01.png">
+
