@@ -105,4 +105,5 @@ __NOTE__: The circuit breaker parameters can derived with try and error
   * How Hystrix works?
     * Hystrix creates a Proxy classes over the class that is defined like a wrapper class which contains circuit breaker logic and when everything is good all the wrapper class is doing is just call the underlying method and return the response to the caller.And if anything goes wrong then call the fallback method configured.
     <img width="599" alt="Screenshot 2023-04-17 at 11 15 01 PM" src="https://user-images.githubusercontent.com/26598629/232569047-9406e77b-cea5-4199-98f5-c99a0b2d2b01.png">
+    
 
