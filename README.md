@@ -115,3 +115,10 @@ __NOTE__: The circuit breaker parameters can derived with try and error
 
 <img width="949" alt="Screenshot 2023-04-18 at 11 42 26 PM" src="https://user-images.githubusercontent.com/26598629/232867333-8925a8eb-8ab7-4025-a3f6-5025da8c8f0d.png">
 
+## Bulkhead Pattern
+<img width="922" alt="Screenshot 2023-04-19 at 12 03 32 AM" src="https://user-images.githubusercontent.com/26598629/232871176-45ec2d74-7610-4366-88f8-007bc1b0869b.png">
+
+<img width="1419" alt="Screenshot 2023-04-19 at 12 04 40 AM" src="https://user-images.githubusercontent.com/26598629/232871395-59bfa012-dbc6-4568-89d5-cc6db1de5be4.png">
+ * threadPoolKey: it creates a separate bulk head or separate pool of threads
+ * coreSize : Max Threads
+ * maxQueueSize : Max number of threads that can wait in the Queue without consuming the threads 
