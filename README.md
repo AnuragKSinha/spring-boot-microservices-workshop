@@ -105,5 +105,13 @@ __NOTE__: The circuit breaker parameters can derived with try and error
   * How Hystrix works?
     * Hystrix creates a Proxy classes over the class that is defined like a wrapper class which contains circuit breaker logic and when everything is good all the wrapper class is doing is just call the underlying method and return the response to the caller.And if anything goes wrong then call the fallback method configured.
     <img width="599" alt="Screenshot 2023-04-17 at 11 15 01 PM" src="https://user-images.githubusercontent.com/26598629/232569047-9406e77b-cea5-4199-98f5-c99a0b2d2b01.png">
-    
+  * How to add the Hystrix Params?
+  <img width="1414" alt="Screenshot 2023-04-18 at 11 31 53 PM" src="https://user-images.githubusercontent.com/26598629/232865573-14a80686-5a0a-4bf6-b92d-798fbf17a1c6.png">
+  
+  * Steps to enable Hystrix Dashboards
+     * Add dependencies of Hystrix Dashboard and Actuator
+     * @EnableHystrixDashBoard in Application class
+     * Add below entry in application.properties: management.endpoints.web.exposure.include=hystrix.stream
+
+<img width="949" alt="Screenshot 2023-04-18 at 11 42 26 PM" src="https://user-images.githubusercontent.com/26598629/232867333-8925a8eb-8ab7-4025-a3f6-5025da8c8f0d.png">
 
