@@ -1,11 +1,16 @@
 package io.anuragksinha.moviecatalogservice.resources;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import io.anuragksinha.moviecatalogservice.models.CatalogItem;
 import io.anuragksinha.moviecatalogservice.models.Movie;
+import io.anuragksinha.moviecatalogservice.models.Rating;
 import io.anuragksinha.moviecatalogservice.models.UserRating;
+import io.anuragksinha.moviecatalogservice.services.MovieInfo;
+import io.anuragksinha.moviecatalogservice.services.UserRatingInfo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,30 +28,15 @@ public class MovieCatalogResource {
 	 */
 	@Autowired
 	private WebClient.Builder webClient;
+	@Autowired
+	private MovieInfo movieInfo;
+	@Autowired
+	private UserRatingInfo userRatingInfo;
+
 	@GetMapping("{userId}")
 	public List<CatalogItem> getCatalog(@PathVariable("userId") String userId){
-		UserRating ratings= webClient.build()
-				.get()
-				.uri("http://ratings-data-service/ratingsdata/users/"+ userId)
-				.retrieve()
-				.bodyToMono(UserRating.class)
-				.block();
-		return ratings.getRatings().stream().map(rating -> {
-			Movie movie = webClient.build()
-					.get()
-					.uri( "http://movie-info-service/movies/"+ rating.getMovieId())
-					.retrieve()
-					.bodyToMono(Movie.class)
-			/**
-			 * mono --> is a reactive way of saying that
-			 * eventually you will get an object of this type
-			 */
-					.block();
-			/**
-			 * blocking the execution till the
-			 * mono is fulfilled
-			 */
-			return new CatalogItem(movie.getTitle(), movie.getOverview(), rating.getRating());
-		}).collect(Collectors.toList());
+		UserRating ratings= userRatingInfo.getUserRating(userId);
+		return ratings.getRatings().stream().map(rating -> movieInfo.getCatalogItem(rating))
+				.collect(Collectors.toList());
 	}
 }
