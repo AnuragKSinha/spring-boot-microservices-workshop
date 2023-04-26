@@ -41,3 +41,30 @@ generated-test-sources                           movie-info-service-0.0.1-SNAPSH
 anuragsinha@Anurags-MacBook-Pro target % java -jar movie-info-service-0.0.1-SNAPSHOT.jar --spring.application.name="movie-info-service"
 
 ```
+# 3 @Value annotation tricks
+1. Providing a default message if you don't want your application to fail and fall back to use the default value in case actual value referred is missing.
+2. Managing List 
+3. Managing Maps
+
+```
+@RestController
+public class HelloWorld {
+	@Value("${my.greeting: default value}")
+	private String greetingMessage;
+	
+	@Value("some static message")
+	private String staticMessage;
+	
+	@Value("${my.list.values}")
+	private List<String> listValues;
+	
+	@Value("#{${dbValues
+	private Map<String,String> dbValues;
+}
+```
+application.properties
+```
+my.greeting=Hello World
+my.list.values=One,Two,Three
+dbValues={connectionString: 'http://__',username: 'foo',password: 'pass'}
+```
