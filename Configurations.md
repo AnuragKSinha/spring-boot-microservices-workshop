@@ -71,4 +71,10 @@ dbValues={connectionString: 'http://__',username: 'foo',password: 'pass'}
 ## @ConfigurationProperties vs @Value
 > Having a ConfigurationProperties you can have as a Autowired rather than same @Value in multiple places. When we want to use a configuration in multiple places we use @ConfigurationProperties and when we want to use only in one place we use @Value
 
+<img width="1311" alt="Screenshot 2023-04-27 at 11 03 54 PM" src="https://user-images.githubusercontent.com/26598629/234943227-4b3589f7-4e78-4dcb-8bb1-478f36ab0518.png">
+
+## Drawback
+1. Outside the source code control
+2. Manual management across environments
+
 # Environment Specific
