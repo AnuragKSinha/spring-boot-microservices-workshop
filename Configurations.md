@@ -22,7 +22,7 @@ app.description=Welcome to ${app.name}
 __Benefit of taking the values from the code and putting into a even if the property file is inside the jar because there are ways in which you can override it__
 
 
-# Using External Property Sources
+## Using External Property Sources
 > if we have a application.property placed in the same folder in which compile jar of the Microservices is kept.So when Service starts using java -jar movie-info-service-0.0.1-SNAPSHOT.jar then it keeps up the values from the application.properties from the same folder and override the property file which is inside the jar.
 
 ```
@@ -36,12 +36,12 @@ generated-test-sources                           movie-info-service-0.0.1-SNAPSH
 > External application.properties override the application.properties values which are inside the jar.
 
 
-# Externalise using command line
+## Externalise using command line
 ```
 anuragsinha@Anurags-MacBook-Pro target % java -jar movie-info-service-0.0.1-SNAPSHOT.jar --spring.application.name="movie-info-service"
 
 ```
-# 3 @Value annotation tricks
+## 3 @Value annotation tricks
 1. Providing a default message if you don't want your application to fail and fall back to use the default value in case actual value referred is missing.
 2. Managing List 
 3. Managing Maps
@@ -68,5 +68,7 @@ my.greeting=Hello World
 my.list.values=One,Two,Three
 dbValues={connectionString: 'http://__',username: 'foo',password: 'pass'}
 ```
-# @ConfigurationProperties vs @Value
+## @ConfigurationProperties vs @Value
 > Having a ConfigurationProperties you can have as a Autowired rather than same @Value in multiple places. When we want to use a configuration in multiple places we use @ConfigurationProperties and when we want to use only in one place we use @Value
+
+# Environment Specific
