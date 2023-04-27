@@ -5,7 +5,7 @@
 4. __Version History:__ As its externalized so it not part of the code base so having a verion history is important
 5. __Real Time management:__ the configuration should be picked up in real time and there should not be any need for server restart 
 
-# Using Property file config
+# Externalization
 ## Still its not externalised as this property file goes inside the jar
 ### Refer a value in other property
 ```
