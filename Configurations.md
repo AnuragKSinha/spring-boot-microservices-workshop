@@ -68,3 +68,5 @@ my.greeting=Hello World
 my.list.values=One,Two,Three
 dbValues={connectionString: 'http://__',username: 'foo',password: 'pass'}
 ```
+# @ConfigurationProperties vs @Value
+> Having a ConfigurationProperties you can have as a Autowired rather than same @Value in multiple places. When we want to use a configuration in multiple places we use @ConfigurationProperties and when we want to use only in one place we use @Value
