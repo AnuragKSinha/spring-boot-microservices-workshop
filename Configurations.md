@@ -91,3 +91,14 @@ No active profile set, falling back to 1 default profile: "default"
 > We can have more than 1 active profiles and the way it overrides is the order in which its defined.If QA is defined after test then Values from QA overrides the test profiles value.But anything that you specify in your profile always overrides your default profile. So in general the common values which are same in all the env we define those values in default.And env specific values are defined in env specific profile application.properties.
 
 > __NOTE: Default profile is always active.__
+
+> We have created one jar file which can be deployed in multiple envs using __Profiles__
+<img width="1226" alt="Screenshot 2023-04-29 at 12 04 49 AM" src="https://user-images.githubusercontent.com/26598629/235226714-362c1430-edd6-4e6e-97e7-f41ac70e83a2.png">
+
+Now we have env based configuration but all of them sitting inside your jar you just need to choose your profile were you are running using command line without having to modify the jar.And there is no manual effort required.
+
+## Bean initialization based on Profile
+
+<img width="1348" alt="Screenshot 2023-04-29 at 12 10 24 AM" src="https://user-images.githubusercontent.com/26598629/235227760-8eb9d056-b5ab-4c8a-adaa-c7870a5d68de.png">
+
+Based on the __active profile__ Spring Container will initialize the Repository Bean class. If its __dev__ then __LocalDataSourceBean__ is initialized and if its __prod__ then __DataSourceBean__ class is initialized.
