@@ -101,4 +101,4 @@ Now we have env based configuration but all of them sitting inside your jar you 
 
 <img width="1348" alt="Screenshot 2023-04-29 at 12 10 24 AM" src="https://user-images.githubusercontent.com/26598629/235227760-8eb9d056-b5ab-4c8a-adaa-c7870a5d68de.png">
 
-Based on the __active profile__ Spring Container will initialize the Repository Bean class. If its __dev__ then __LocalDataSourceBean__ is initialized and if its __prod__ then __DataSourceBean__ class is initialized.
+Based on the __active profile__ Spring Container will initialize the Repository Bean class. If its __dev__ then __LocalDataSourceBean__ is initialized and if its __prod__ then __DataSourceBean__ class is initialized.If there is no @Profile annotation used then by default all the beans are initialized.
