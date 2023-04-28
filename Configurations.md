@@ -86,3 +86,6 @@ dbValues={connectionString: 'http://__',username: 'foo',password: 'pass'}
 ```
 No active profile set, falling back to 1 default profile: "default"
 ```
+<img width="823" alt="Screenshot 2023-04-28 at 11 52 43 PM" src="https://user-images.githubusercontent.com/26598629/235224459-a3a65e18-1742-4d94-a114-4839013fd6db.png">
+
+> We can have more than 1 active profiles and the way it overrides is the order in which its defined.If QA is defined after test then Values from QA overrides the test profiles value.But anything that you specify in your profile always overrides your default profile. So in general the common values which are same in all the env we define those values in default.And env specific values are defined in env specific profile application.properties.
