@@ -78,3 +78,5 @@ dbValues={connectionString: 'http://__',username: 'foo',password: 'pass'}
 2. Manual management across environments
 
 # Environment Specific
+## Spring Profiles
+<img width="1339" alt="Screenshot 2023-04-28 at 11 33 09 PM" src="https://user-images.githubusercontent.com/26598629/235220979-2f9118f5-f070-4c42-b662-8cf4d1f3bdf8.png">
