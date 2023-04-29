@@ -170,3 +170,6 @@ Environment can be used to:
 
 <img width="1404" alt="Screenshot 2023-04-29 at 12 37 38 AM" src="https://user-images.githubusercontent.com/26598629/235305765-fd384c44-0726-4618-966c-4a779558ed02.png">
 
+### Options for Config As a Service
+<img width="1229" alt="Screenshot 2023-04-29 at 7 14 54 PM" src="https://user-images.githubusercontent.com/26598629/235306137-13765084-f99b-452f-9765-7b0dafb16014.png">
+
