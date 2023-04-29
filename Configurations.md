@@ -172,5 +172,6 @@ Environment can be used to:
 
 ### Options for Config As a Service
 <img width="1229" alt="Screenshot 2023-04-29 at 7 14 54 PM" src="https://user-images.githubusercontent.com/26598629/235306137-13765084-f99b-452f-9765-7b0dafb16014.png">
+
 > With Use of Git Repo, Version History is taken care. 
 
