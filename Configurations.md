@@ -175,3 +175,6 @@ Environment can be used to:
 
 > With Use of Git Repo, Version History is taken care. 
 
+### Whats the URL for Config Server
+<img width="1007" alt="Screenshot 2023-04-29 at 7 52 42 PM" src="https://user-images.githubusercontent.com/26598629/235307855-50a1935f-7f82-4e61-8010-4412acb5b539.png">
+
