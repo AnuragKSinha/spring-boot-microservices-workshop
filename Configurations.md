@@ -160,4 +160,13 @@ Environment can be used to:
 ## Spring Cloud Config Server
 > This will help us to move from single service to multiple microservices and have consistency in having configuration accross all the microservices.
 ### Recap on the Goals
-1. Externalized: Property Files
+1. Externalized: __Property Files__ and move the configuration outside of the Jar/code by placing the application.properties in same folder as jar.And also by providing the parameter via command line while executing the Jar to override the property values.
+2. Environment Specific: Spring Profiles which works in conjunction of property files So that we can make different property file for different environments.
+3. Consistency is not achieved as Jar will be deployed in multiple environments and any changes made needs to propagate to all the environments as all has its own copy. 
+4. Version History: without consistency there is no sense of having version history
+5. Real Time Management is not achieved
+
+> As in microservice world there are multiple microservices deployed which might require same configuration values.That is when Config server comes into picture were we take our the configuration out of microservices and create a separate configuration service. And make Config Server as Single Source of truth and have that manage all the Information so no matter what the Microservices is it all refers to the same source of truth. 
+
+<img width="1404" alt="Screenshot 2023-04-29 at 12 37 38 AM" src="https://user-images.githubusercontent.com/26598629/235305765-fd384c44-0726-4618-966c-4a779558ed02.png">
+
