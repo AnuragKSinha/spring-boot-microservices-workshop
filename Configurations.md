@@ -102,3 +102,62 @@ Now we have env based configuration but all of them sitting inside your jar you 
 <img width="1348" alt="Screenshot 2023-04-29 at 12 10 24 AM" src="https://user-images.githubusercontent.com/26598629/235227760-8eb9d056-b5ab-4c8a-adaa-c7870a5d68de.png">
 
 Based on the __active profile__ Spring Container will initialize the Repository Bean class. If its __dev__ then __LocalDataSourceBean__ is initialized and if its __prod__ then __DataSourceBean__ class is initialized.__If there is no @Profile annotation used then by default all the beans are initialized.__
+## Environment Object
+> In a Spring Boot application, the Environment object represents the environment in which the application is running, including information such as system properties, command line arguments, and application properties.
+You can use the Environment object in your code to access properties and configuration information for your application. One way to access the Environment object is to inject it into your bean using the @Autowired annotation:
+
+```
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.EnvironmentAware;
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Component;
+
+@Component
+public class MyBean implements EnvironmentAware {
+
+    private Environment env;
+
+    @Override
+    public void setEnvironment(Environment env) {
+        this.env = env;
+    }
+
+    public void doSomething() {
+        String property = env.getProperty("my.property");
+        // use the property value here
+    }
+
+}
+```
+In the above example, the MyBean class implements the EnvironmentAware interface and overrides the setEnvironment() method to store a reference to the Environment object. The doSomething() method uses the env.getProperty() method to retrieve the value of a property named my.property.
+
+Note that you can also use the @Value annotation to inject property values directly into your bean, as long as the properties are defined in your application's properties or YAML file. For example:
+
+```
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
+public class MyBean {
+
+    @Value("${my.property}")
+    private String property;
+
+    public void doSomething() {
+        // use the property value here
+    }
+
+}
+```
+
+In the above example, the @Value annotation is used to inject the value of a property named my.property directly into the property field of the MyBean class.
+
+
+Environment can be used to:
+- look up profiles. It should not be done as it can affect testability.
+- look up properties. It should not be done. Use @Value and ${}.
+
+## Spring Cloud Config Server
+> This will help us to move from single service to multiple microservices and have consistency in having configuration accross all the microservices.
+### Recap on the Goals
+1. Externalized: Property Files
