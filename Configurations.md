@@ -175,6 +175,9 @@ Environment can be used to:
 
 > With Use of Git Repo, Version History is taken care. 
 
-### Whats the URL for Config Server
+### Whats the URL for Config Server?
+> Once we start the config server we can access the URL as show below to view the configuration from git.Example: localhost:8888/application/default
+> server.port=8888
+> spring.cloud.config.server.git.uri=<GIT URL> 
 <img width="1007" alt="Screenshot 2023-04-29 at 7 52 42 PM" src="https://user-images.githubusercontent.com/26598629/235307855-50a1935f-7f82-4e61-8010-4412acb5b539.png">
 
