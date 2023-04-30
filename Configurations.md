@@ -191,3 +191,5 @@ spring.cloud.config.uri
 	1. define spring.application.name
 	2. add microservice name related application.properties file in git repo where Spring Config Server is pointing to. Ex, Application name: spring-boot-config and application.properties file name is spring-boot-config.properties
 
+### How will Microservices pickup latest changes made to property files?
+> 
