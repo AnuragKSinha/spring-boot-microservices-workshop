@@ -186,4 +186,8 @@ spring.cloud.config.server.git.uri
 	
 ### Client Side Changes
 spring.cloud.config.uri
+	
+### How to create configuration specific to Microservices?
+	1. define spring.application.name
+	2. add microservice name related application.properties file in git repo where Spring Config Server is pointing to. Ex, Application name: spring-boot-config and application.properties file name is spring-boot-config.properties
 
