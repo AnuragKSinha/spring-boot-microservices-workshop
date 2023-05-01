@@ -189,7 +189,8 @@ spring.cloud.config.uri
 	
 ### How to create configuration specific to Microservices?
 	1. define spring.application.name
-	2. add microservice name related application.properties file in git repo where Spring Config Server is pointing to. Ex, Application name: spring-boot-config and application.properties file name is spring-boot-config.properties
+	2. add microservice name related application.properties file in git repo where Spring Config Server is pointing to.
+	Ex, Application name: spring-boot-config and application.properties file name is spring-boot-config.properties
 
 ### How will Microservices pickup latest changes made to property files?
 > The config server will always pickup the latest changes by default.Its the client microservices which does not pick the latest changes from config server. And its by design bacause when you have bunch of microservices in your system then you dont want it to constantly looking for an update in the config because it takes time and resources and its intensive and its not often that you make changes frequently.The Goal of the microservices are to do whatever they were created to do, the business problem they are meant to solve and you dont want to take its valuable CPU cycles or memory to keep on checking if there is an update in the configuration. 
@@ -198,3 +199,5 @@ spring.cloud.config.uri
 	By default. 
 	2. Spring Boot Actuator provides an endpoint were POST request can be made to refresh the Client Server Configuration 
 	and then Client will have latest changes from Config Server.
+	3. @RefreshScope needs to be used on the beans whose values you want to refresh when POST endpoint is hit.Refresh does not 
+	happen for all the beans. 
