@@ -199,6 +199,6 @@ spring.cloud.config.uri
 	By default. 
 	2. Spring Boot Actuator provides an endpoint were POST request can be made to refresh the Client Server Configuration 
 	and then Client will have latest changes from Config Server. 
-	http://localhost:8080/actuator/refresh
+	"http://localhost:8080/actuator/refresh"
 	3. @RefreshScope needs to be used on the beans whose values you want to refresh when POST endpoint is hit.Refresh does not 
 	happen for all the beans. 
