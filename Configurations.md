@@ -193,3 +193,8 @@ spring.cloud.config.uri
 
 ### How will Microservices pickup latest changes made to property files?
 > The config server will always pickup the latest changes by default.Its the client microservices which does not pick the latest changes from config server. And its by design bacause when you have bunch of microservices in your system then you dont want it to constantly looking for an update in the config because it takes time and resources and its intensive and its not often that you make changes frequently.The Goal of the microservices are to do whatever they were created to do, the business problem they are meant to solve and you dont want to take its valuable CPU cycles or memory to keep on checking if there is an update in the configuration. 
+
+	1. By restarting the client server the microservices will pickup need configurations from the config server.
+	By default. 
+	2. Spring Boot Actuator provides an endpoint were POST request can be made to refresh the Client Server Configuration 
+	and then Client will have latest changes from Config Server.
