@@ -202,3 +202,13 @@ spring.cloud.config.uri
 	"http://localhost:8080/actuator/refresh"
 	3. @RefreshScope needs to be used on the beans whose values you want to refresh when POST endpoint is hit.Refresh does not 
 	happen for all the beans. 
+
+# Best Practices: Configuration Strategies 
+	1. Specificity Microservices specific change: NO --> application.properties
+		Configuration which is rarely going to change like 
+		application.name or any property which is internal to microservice.
+	2. Specificity Microservices specific change: YES --> Config Server
+		Configuration which is most likely going to change at runtime like 
+		In Deployment in AWS,GCP there will be system variable which is going to 
+		change based on which cloud provider is being used.
+		
